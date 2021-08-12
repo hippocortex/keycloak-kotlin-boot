@@ -10,10 +10,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 
-@RequestMapping("/skills/V1/public")
+@RequestMapping("/skills/v1")
 interface SkillsResourceApi {
 
-    @GetMapping(path = ["/skills"])
+    @GetMapping(path = ["/view"])
     @Operation(summary = "Find the authenticated user by jwt attribute userId")
     @ApiResponses(
         ApiResponse(responseCode = "200", content = [Content(schema = Schema(implementation = SkillDto::class))]),

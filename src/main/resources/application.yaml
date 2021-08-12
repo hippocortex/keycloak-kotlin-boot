@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: "Service Payment"
+    keycloak:
+      url: http://localhost:9090/auth
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${application.keycloak.url}/realms/microservices
+          jwk-set-uri: ${application.keycloak.url}/realms/microservices/protocol/openid-connect/certs
