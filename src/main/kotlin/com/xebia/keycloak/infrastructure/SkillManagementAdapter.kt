@@ -8,11 +8,8 @@ import org.springframework.stereotype.Component
 @Component
 class SkillManagementAdapter : SkillsManagementSpi {
 
-
     companion object {
-
-        val skills = mapOf<Int, SkillEntity>(1 to SkillEntity(id = 1, name = "Java", category = "BackEnd"))
-
+        val skills = mapOf<Int, SkillEntity>(1 to SkillEntity(id = 1, name = "Java", category = "BackEnd"),2 to SkillEntity(id=2,name="Python",category = "BackEnd"))
     }
 
     override fun getAll(): List<Skill> {
