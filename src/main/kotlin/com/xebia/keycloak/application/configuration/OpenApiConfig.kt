@@ -33,20 +33,4 @@ class OpenApiConfig {
                     )
             )
     }
-
-    @Bean
-    fun consumerOpenApi() : GroupedOpenApi {
-        return GroupedOpenApi.builder()
-            .group("consumer")
-            .pathsToMatch("/payment/V1/transfer/**")
-            .build()
-    }
-
-    @Bean
-    fun adminOpenApi() : GroupedOpenApi {
-        return GroupedOpenApi.builder()
-            .group("admin")
-            .pathsToMatch("/payment/V1/admin/transfer/**")
-            .build()
-    }
 }

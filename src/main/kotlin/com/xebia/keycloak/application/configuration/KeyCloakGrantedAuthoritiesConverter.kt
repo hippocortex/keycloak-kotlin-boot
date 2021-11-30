@@ -1,13 +1,10 @@
 package com.xebia.keycloak.application.configuration
 
-import net.minidev.json.JSONArray
-import net.minidev.json.JSONObject
 import org.springframework.core.convert.converter.Converter
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.oauth2.jwt.Jwt
 import org.springframework.util.Assert
-import java.util.*
 
 /**
  * Extracts the [GrantedAuthority]s from scope attributes for a Keycloak IAM server
@@ -49,18 +46,13 @@ class KeyCloakGrantedAuthoritiesConverter : Converter<Jwt, Collection<GrantedAut
 
     private fun getAuthorities(jwt: Jwt): Collection<String> {
         val authorities = jwt.getClaim<Any>(KEYCLOAK_CLAIM_NAME)
-        val returnList = mutableListOf<String>()
-        if (authorities is JSONObject && authorities.containsKey(KEYCLOAK_ROLES)) {
+        if (authorities is Map<*, *> && authorities.containsKey(KEYCLOAK_ROLES)) {
             val roles = authorities[KEYCLOAK_ROLES]
-            if (roles is JSONArray) {
-                for (i in 0 until roles.size) {
-                    val role = roles[i]
-                    if (role is String) {
-                        returnList.add(role)
-                    }
-                }
+            if (roles is ArrayList<*>) {
+                return roles
+                    .filterIsInstance(String::class.java)
             }
         }
-        return returnList
+        return listOf()
     }
 }
