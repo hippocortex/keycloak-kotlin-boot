@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "spring.application.keycloak.url",
+      "type": "java.lang.String",
+      "description": "url of keycloak OAuth server."
+  }
+] }
