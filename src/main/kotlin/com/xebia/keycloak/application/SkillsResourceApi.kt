@@ -1,5 +1,6 @@
 package com.xebia.keycloak.application
 
+import com.xebia.keycloak.application.configuration.OpenApiConfig
 import com.xebia.keycloak.application.error.ErrorHandlerController.ErrorDto
 import com.xebia.keycloak.application.model.SkillDto
 import io.swagger.v3.oas.annotations.Operation
@@ -7,13 +8,16 @@ import io.swagger.v3.oas.annotations.media.Content
 import io.swagger.v3.oas.annotations.media.Schema
 import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.responses.ApiResponses
+import io.swagger.v3.oas.annotations.security.SecurityRequirement
+import io.swagger.v3.oas.annotations.security.SecurityRequirements
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 
-@RequestMapping("/skills/V1/public")
+@RequestMapping("/skills/v1/public")
+@SecurityRequirements(value = [SecurityRequirement(name = OpenApiConfig.BEARER_SCHEME)])
 interface SkillsResourceApi {
 
-    @GetMapping(path = ["/skills"])
+    @GetMapping(path = ["/view"])
     @Operation(summary = "Find the authenticated user by jwt attribute userId")
     @ApiResponses(
         ApiResponse(responseCode = "200", content = [Content(schema = Schema(implementation = SkillDto::class))]),
