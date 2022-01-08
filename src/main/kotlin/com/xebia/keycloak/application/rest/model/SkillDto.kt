@@ -1,4 +1,4 @@
-package com.xebia.keycloak.application.model
+package com.xebia.keycloak.application.rest.model
 
 import com.xebia.keycloak.domain.model.Skill
 

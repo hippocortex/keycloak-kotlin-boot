@@ -1,26 +1,6 @@
 spring:
   application:
-    name: "Service Payment"
-
-
-management:
-  server:
-    port: 9292
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: always
-  info:
-    git:
-      mode: full
-  metrics:
-    distribution:
-      percentiles:
-        spring.rabbitmq.listener: 0.95
-        http.server.requests: 0.95
+    name: "OAuth2 for dummy"
 
 springdoc:
   api-docs:
