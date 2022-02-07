@@ -7,3 +7,6 @@ springdoc:
     path: /skills/v1/api-docs
   swagger-ui:
     path: /skills/v1/api-docs/swagger-ui.html
+logging:
+  level:
+    org.springframework.security: TRACE
