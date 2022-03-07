@@ -1,7 +1,0 @@
-
-logging:
-  level:
-    com.xebia: TRACE
-    org.springframework.security: TRACE
-    io:
-      restassured: TRACE
