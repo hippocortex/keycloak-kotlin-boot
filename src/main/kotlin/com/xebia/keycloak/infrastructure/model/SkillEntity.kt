@@ -4,14 +4,13 @@ import com.xebia.keycloak.domain.model.Skill
 
 data class SkillEntity(
     val id: Int,
-    val name: String,
+    val type: String,
     val category: String
 ) {
-    fun
-        toDomain(): Skill {
+    fun toDomain(): Skill {
         return Skill(
             id = id,
-            name = name,
+            type = type,
             category = category
         )
     }

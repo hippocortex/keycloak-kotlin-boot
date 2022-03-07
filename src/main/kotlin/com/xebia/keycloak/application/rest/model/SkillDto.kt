@@ -9,7 +9,7 @@ data class SkillDto(
 ) {
     companion object {
         fun fromDomain(skill: Skill): SkillDto {
-            return SkillDto(id = skill.id, skill = skill.name, category = skill.category)
+            return SkillDto(id = skill.id, skill = skill.type, category = skill.category)
         }
     }
 }

@@ -4,7 +4,7 @@ import com.xebia.keycloak.domain.model.Skill
 import org.springframework.stereotype.Service
 
 @Service
-class SkillsManagement(val skillsManagementSpi:SkillsManagementSpi):SkillsManagementApi {
+class SkillsManagement(private val skillsManagementSpi:SkillsManagementSpi):SkillsManagementApi {
     override fun getAll(): List<Skill> {
         return skillsManagementSpi.getAll()
     }
