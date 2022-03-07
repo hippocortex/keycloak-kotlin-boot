@@ -45,5 +45,6 @@ class KeycloakConfiguration : KeycloakWebSecurityConfigurerAdapter() {
             .anyRequest()
             .permitAll()
             .and().csrf().disable()
+            .cors().disable()
     }
 }
