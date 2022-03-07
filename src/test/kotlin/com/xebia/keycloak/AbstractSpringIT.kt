@@ -10,7 +10,6 @@ import org.jose4j.jws.JsonWebSignature
 import org.jose4j.jwt.JwtClaims
 import org.jose4j.jwt.NumericDate
 import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.extension.ExtendWith
 import org.keycloak.adapters.springboot.KeycloakSpringBootProperties
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.context.properties.EnableConfigurationProperties
@@ -19,7 +18,6 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.web.server.LocalServerPort
 import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock
 import org.springframework.test.context.ActiveProfiles
-import org.springframework.test.context.junit.jupiter.SpringExtension
 import java.time.Instant
 import java.time.temporal.ChronoUnit
 import java.util.*
@@ -44,9 +42,6 @@ import java.util.Map
  */
 @SpringBootTest(
     webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
-)
-@ExtendWith(
-    SpringExtension::class
 )
 @ActiveProfiles(value = ["it"])
 @EnableConfigurationProperties(
