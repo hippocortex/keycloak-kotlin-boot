@@ -13,7 +13,6 @@ import org.junit.jupiter.api.BeforeEach
 import org.keycloak.adapters.springboot.KeycloakSpringBootProperties
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.context.properties.EnableConfigurationProperties
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.web.server.LocalServerPort
 import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock
@@ -45,15 +44,14 @@ import java.util.Map
 )
 @ActiveProfiles(value = ["it"])
 @EnableConfigurationProperties(
-    KeycloakSpringBootProperties::class)
-@AutoConfigureMockMvc
+    KeycloakSpringBootProperties::class
+)
 @AutoConfigureWireMock(port = 0) //random port, that is wired into properties with key wiremock.server.port
 abstract class AbstractSpringIT {
 
 
     @LocalServerPort
     var serverPort = 0
-
 
 
     lateinit var rsaJsonWebKey: RsaJsonWebKey
