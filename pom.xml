@@ -1,95 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.5.3</version>
-    <relativePath/> <!-- lookup parent from repository -->
-  </parent>
-  <groupId>com.xebia</groupId>
   <artifactId>keycloak</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>kotlin-springboot</name>
-  <description>Demo project for Spring Boot - keycloak - kotlin</description>
-  <properties>
-    <java.version>11</java.version>
-    <kotlin.version>1.5.21</kotlin.version>
-    <springdoc-openapi.version>1.5.10</springdoc-openapi.version>
-  </properties>
-  <dependencies>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-security</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.jayway.jsonpath</groupId>
-      <artifactId>json-path</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.module</groupId>
-      <artifactId>jackson-module-kotlin</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jetbrains.kotlin</groupId>
-      <artifactId>kotlin-reflect</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.jetbrains.kotlin</groupId>
-      <artifactId>kotlin-stdlib-jdk8</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springdoc</groupId>
-      <artifactId>springdoc-openapi-ui</artifactId>
-      <version>${springdoc-openapi.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springdoc</groupId>
-      <artifactId>springdoc-openapi-security</artifactId>
-      <version>${springdoc-openapi.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springdoc</groupId>
-      <artifactId>springdoc-openapi-kotlin</artifactId>
-      <version>${springdoc-openapi.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.security</groupId>
-      <artifactId>spring-security-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
   <build>
-    <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
-    <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
     <plugins>
       <plugin>
-        <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <groupId>org.springframework.boot</groupId>
       </plugin>
       <plugin>
-        <groupId>org.jetbrains.kotlin</groupId>
         <artifactId>kotlin-maven-plugin</artifactId>
         <configuration>
           <args>
@@ -101,13 +20,94 @@
         </configuration>
         <dependencies>
           <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-maven-allopen</artifactId>
+            <groupId>org.jetbrains.kotlin</groupId>
             <version>${kotlin.version}</version>
           </dependency>
         </dependencies>
+        <groupId>org.jetbrains.kotlin</groupId>
       </plugin>
     </plugins>
+    <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
+    <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
   </build>
+  <dependencies>
+    <dependency>
+      <artifactId>spring-boot-starter-security</artifactId>
+      <groupId>org.springframework.boot</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <groupId>org.springframework.boot</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+      <groupId>org.springframework.boot</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+      <groupId>org.springframework.boot</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>json-path</artifactId>
+      <groupId>com.jayway.jsonpath</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>jackson-module-kotlin</artifactId>
+      <groupId>com.fasterxml.jackson.module</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>kotlin-reflect</artifactId>
+      <groupId>org.jetbrains.kotlin</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>kotlin-stdlib-jdk8</artifactId>
+      <groupId>org.jetbrains.kotlin</groupId>
+    </dependency>
+
+    <dependency>
+      <artifactId>springdoc-openapi-ui</artifactId>
+      <groupId>org.springdoc</groupId>
+      <version>${springdoc-openapi.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>springdoc-openapi-security</artifactId>
+      <groupId>org.springdoc</groupId>
+      <version>${springdoc-openapi.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>springdoc-openapi-kotlin</artifactId>
+      <groupId>org.springdoc</groupId>
+      <version>${springdoc-openapi.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <artifactId>spring-security-test</artifactId>
+      <groupId>org.springframework.security</groupId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <description>Demo project for Spring Boot - keycloak - kotlin</description>
+  <groupId>com.xebia</groupId>
+  <modelVersion>4.0.0</modelVersion>
+  <name>kotlin-springboot</name>
+  <parent>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <relativePath/>
+    <version>2.5.3</version> <!-- lookup parent from repository -->
+  </parent>
+  <properties>
+    <java.version>11</java.version>
+    <kotlin.version>1.5.21</kotlin.version>
+    <springdoc-openapi.version>1.5.10</springdoc-openapi.version>
+  </properties>
+
+  <version>0.0.1-SNAPSHOT</version>
 
 </project>

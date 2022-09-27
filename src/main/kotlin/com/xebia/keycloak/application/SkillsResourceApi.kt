@@ -21,7 +21,11 @@ interface SkillsResourceApi {
     @Operation(summary = "Find the authenticated user by jwt attribute userId")
     @ApiResponses(
         ApiResponse(responseCode = "200", content = [Content(schema = Schema(implementation = SkillDto::class))]),
-        ApiResponse(responseCode = "404", description = "User not Found", content = [Content(schema = Schema(implementation = ErrorDto::class))]),
+        ApiResponse(
+            responseCode = "404",
+            description = "User not Found",
+            content = [Content(schema = Schema(implementation = ErrorDto::class))]
+        ),
         ApiResponse(responseCode = "403", description = "Forbidden"),
         ApiResponse(responseCode = "401", description = "Unauthorized"),
         ApiResponse(responseCode = "500", description = "Internal Server error")

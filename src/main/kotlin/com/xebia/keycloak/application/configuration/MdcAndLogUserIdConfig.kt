@@ -34,8 +34,8 @@ class MdcAndLogUserIdConfig {
         @EventListener
         fun handleAuthenticationSuccess(event: AuthenticationSuccessEvent) {
             MDC.put(
-                    "keycloakId",
-                    ((event.source as JwtAuthenticationToken).principal as Jwt).getClaimAsString("sub")
+                "keycloakId",
+                ((event.source as JwtAuthenticationToken).principal as Jwt).getClaimAsString("sub")
             )
         }
     }

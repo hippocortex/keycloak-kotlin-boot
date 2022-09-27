@@ -4,5 +4,5 @@ import com.xebia.keycloak.domain.model.Skill
 
 interface SkillsManagementApi {
 
-    fun getAll():List<Skill>
+    fun getAll(): List<Skill>
 }
