@@ -1,6 +1,6 @@
 package com.xebia.keycloak.application
 
-import com.xebia.keycloak.application.rest.model.SkillDto
+import com.xebia.keycloak.application.model.SkillDto
 import com.xebia.keycloak.domain.SkillsManagementApi
 import org.springframework.web.bind.annotation.RestController
 

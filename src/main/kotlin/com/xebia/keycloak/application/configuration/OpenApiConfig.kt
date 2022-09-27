@@ -1,4 +1,4 @@
-package com.xebia.keycloak.application.rest.configuration
+package com.xebia.keycloak.application.configuration
 
 import io.swagger.v3.oas.models.Components
 import io.swagger.v3.oas.models.OpenAPI

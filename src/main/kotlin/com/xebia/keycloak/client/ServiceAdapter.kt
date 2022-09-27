@@ -10,7 +10,7 @@ import com.xebia.keycloak.domain.model.Skill
 import org.springframework.stereotype.Component
 import retrofit2.Retrofit
 import retrofit2.converter.jackson.JacksonConverterFactory
-
+//just to test
 @Component
 class ServiceAdapter() {
 

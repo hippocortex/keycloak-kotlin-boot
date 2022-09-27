@@ -1,4 +1,4 @@
-package com.xebia.keycloak.application.rest.configuration
+package com.xebia.keycloak.application.configuration
 
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver
 import org.keycloak.adapters.springsecurity.KeycloakConfiguration
