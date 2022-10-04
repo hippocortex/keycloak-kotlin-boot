@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 
 @RequestMapping("/skills/v1/public")
-@SecurityRequirements(value = [SecurityRequirement(name = OpenApiConfig.BEARER_SCHEME)])
+@SecurityRequirements(value = [SecurityRequirement(name = OpenApiConfig.BEARER_SCHEME), SecurityRequirement(name = OpenApiConfig.OAUTH2_IMPLICIT)])
 interface SkillsResourceApi {
 
     @GetMapping(path = ["/view"])

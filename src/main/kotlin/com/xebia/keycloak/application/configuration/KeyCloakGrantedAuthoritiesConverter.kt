@@ -16,7 +16,6 @@ import org.springframework.util.Assert
  */
 class KeyCloakGrantedAuthoritiesConverter : Converter<Jwt, Collection<GrantedAuthority>> {
     private var authorityPrefix = "ROLE_"
-
     companion object {
         private const val KEYCLOAK_CLAIM_NAME = "realm_access"
         private const val KEYCLOAK_ROLES = "roles"

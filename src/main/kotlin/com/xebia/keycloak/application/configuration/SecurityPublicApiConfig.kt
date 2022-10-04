@@ -23,13 +23,11 @@ class SecurityPublicApiConfig : WebSecurityConfigurerAdapter() {
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
             .authorizeRequests()
-            .antMatchers("/skills/v1/public/**").hasRole("payment")
+            .antMatchers("/skills/v1/public/**").hasRole("admin")
             .antMatchers(
                 "/actuator/**",
                 "/error",
-
                 "/skills/v1/api-docs/**",
-
                 ).permitAll()
             .anyRequest().authenticated()
             .and()

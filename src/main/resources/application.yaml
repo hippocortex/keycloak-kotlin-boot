@@ -11,7 +11,7 @@ spring:
 
 application:
   keycloak:
-    url: http://localhost:9090/auth
+    url: http://localhost:9595/auth
 
 management:
   server:
@@ -37,3 +37,5 @@ springdoc:
     path: /skills/v1/api-docs
   swagger-ui:
     path: /skills/v1/api-docs/swagger-ui.html
+    oauth:
+      client-id: swagger-ui-admin-implicit
