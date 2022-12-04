@@ -19,7 +19,7 @@ class ServiceAdapter() {
     val authBaseUri = "http://localhost:9595/"
 
     fun getToken(): String {
-        apiToken = authenticationClient().login(clientId = "spring-api", clientSecret = "055a35cb-6008-4d89-8dac-50f23ce57e67", realm = "appspringoauth").execute().body()!!.accessToken
+        apiToken = authenticationClient().login(clientId = "appspringoauth", clientSecret = "QszH5s5svkcwLmT0GZtIYhnWCSqWG782", realm = "microservices").execute().body()!!.accessToken
         return apiToken
     }
 
