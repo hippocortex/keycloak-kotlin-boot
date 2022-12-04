@@ -11,14 +11,8 @@ import org.junit.jupiter.api.Test
 
 class SkillsResourceIT : AbstractSpringIT() {
 
-    companion object {
-        private const val FAKE_CLOCK = "2022-01-20T09:10:39Z"
-    }
-
     @Test
     fun `should get skills if we have token`() {
-        //givenClockIsFixedAt(FAKE_CLOCK)
-
         Given {
             header(
                 "Authorization",
@@ -30,7 +24,7 @@ class SkillsResourceIT : AbstractSpringIT() {
         } Then {
             statusCode(200)
             assertJsonBodyIsEqualStrict("""
-                [{"id":1,"skill":"Java","category":"BackEnd"},{"id":2,"skill":"Python","category":"BackEnd"}]
+                [{"id":1,"type":"Java","category":"BackEnd"},{"id":2,"type":"Python","category":"BackEnd"}]
             """.trimIndent())
         } Extract {
             println(this.asString())
@@ -40,8 +34,6 @@ class SkillsResourceIT : AbstractSpringIT() {
 
     @Test
     fun `should not get skills if we don't have a good token`() {
-        //givenClockIsFixedAt(FAKE_CLOCK)
-
         Given {
             header(
                 "Authorization",
@@ -56,6 +48,5 @@ class SkillsResourceIT : AbstractSpringIT() {
         } Extract {
             println(this.asString())
         }
-
     }
 }

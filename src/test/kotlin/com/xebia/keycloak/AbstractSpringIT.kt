@@ -132,7 +132,7 @@ abstract class AbstractSpringIT {
         ) // who creates the token and signs it
         claims.subject = UUID.randomUUID().toString() // the subject/principal is whom the token is about
         claims.setClaim("typ", "Bearer") // set type of token
-        claims.setClaim("azp", "spring-api") // Authorized party  (the party to which this token was issued)
+        claims.setClaim("azp", "appspringoauth") // Authorized party  (the party to which this token was issued)
         claims.setClaim(
             "auth_time",
             NumericDate.fromMilliseconds(Instant.now().minus(11, ChronoUnit.SECONDS).toEpochMilli()).value
@@ -141,7 +141,7 @@ abstract class AbstractSpringIT {
         claims.setClaim("acr", "0") //Authentication context class
         claims.setClaim(
             "realm_access",
-            Map.of("roles", List.of("offline_access", "uma_authorization", "user"))
+            Map.of("roles", List.of("offline_access", "uma_authorization", "admin"))
         ) //keycloak roles
         claims.setClaim(
             "resource_access", Map.of(
