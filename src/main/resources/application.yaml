@@ -1,6 +1,6 @@
 spring:
   application:
-    name: "Service Payment"
+    name: "Test OAuth"
 
   security:
     oauth2:
@@ -26,11 +26,6 @@ management:
   info:
     git:
       mode: full
-  metrics:
-    distribution:
-      percentiles:
-        spring.rabbitmq.listener: 0.95
-        http.server.requests: 0.95
 
 springdoc:
   api-docs:
