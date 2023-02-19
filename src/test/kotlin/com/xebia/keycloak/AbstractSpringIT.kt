@@ -23,22 +23,6 @@ import java.util.*
 import java.util.List
 import java.util.Map
 
-
-/**
- * All Integration Test that will extend this class will share the same Spring context.
- * This speed up Integration because Spring is started only one
- *
- * Rabbitmq Listener are disabled during IT test to isolate each test
- *
- * @see <a href="https://www.baeldung.com/spring-tests">Baeldung Spring Integration test</a>
- *
- * WARNING WARNING WARNING :
- * if you need to use @MockBean or @SpyBean annotation you need to do it here !!!
- * If you do it in your concret Integration Test extending this class Spring will mark the context as dirty
- * and will try to restart the application Context
- *   -> it will fail because wiremock and Spring MVC ar configured to use fixed port and cannot be start twice at the same time !!!!!
- *
- */
 @SpringBootTest(
     webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
